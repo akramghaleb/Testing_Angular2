@@ -4,13 +4,32 @@
   <!-- Angular Material style sheet -->
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
   <link rel="stylesheet" href="app.css">
+  <title>Angular 2 Test Osama&Akram</title>
 </head>
 <body ng-app="MyResume" layout="column">
+  <div>
+    <p ng-init="names=['Akram' , 'Mohammed','Ali','Koee','No one']"></p>
+      <input type="text" ng-model="n" placeholder="Enter your number here"/>
+      <p>Your fav meat is : {{names[n]}}</p>
+      <ol>
+       <li  ng-repeat="n in names">{{n}}</li>
+      </ol>
+
+      <div ng-controller="C1Controller">
+          <p>{{message}}</p>
+          <input type="text" ng-model="search" placeholder="Enter your name here"/>
+          <ol type="I" class="card">
+              <li ng-repeat="c in colors |orderBy:'name'|filter : search">
+                  {{c.name}}'s favorite color is {{c.color}} - {{c.rate |currency:'RY'}}
+              </li>
+          </ol>
+      </div>
+  </div>
 <!--
   Your HTML content here
 -->
 <md-toolbar>
-  <h1>Curriculum Vitae</h1>
+  <h1>CV</h1>
 </md-toolbar>
 
 <div class="container" layout="row" flex>
